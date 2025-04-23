@@ -202,6 +202,10 @@ footer{
         width: 90%;
         padding: 5px;
     }
+    
+    .titleText{
+        font-size: 2em;
+        }
 
     .buttons {
         flex-direction: column;

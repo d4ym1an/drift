@@ -203,9 +203,9 @@ footer{
         padding: 5px;
     }
     
-    .titleText{
+    .Titletext{
         font-size: 2em;
-        }
+    }
 
     .buttons {
         flex-direction: column;

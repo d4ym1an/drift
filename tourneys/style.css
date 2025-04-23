@@ -12,6 +12,10 @@
 *{
     margin: 0;
 }
+::selection {
+    background-color: #c6ff9a;
+    color: #000000;
+}
 
 body {
     font-family: 'forza';
@@ -23,6 +27,13 @@ body {
     background-blend-mode: overlay;
     margin: 0;
     animation: scrollBackground 30s linear infinite; /* Add animation */
+}
+
+a{
+    font-size: 20px;
+    color: #000000;
+    text-decoration: underline;
+    transition: color 300ms ease;
 }
 
 footer{
@@ -68,6 +79,7 @@ footer{
     text-align: center;
     width: 75%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-left: auto;

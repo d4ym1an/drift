@@ -4,6 +4,12 @@
     margin: 0;
 }
 
+::selection {
+    background-color: #c6ff9a;
+    color: #000000;
+}
+
+
 body {
     font-family: 'forza';
     background: linear-gradient(to bottom, #76cb37, #000000), url('/assets/topo.svg');

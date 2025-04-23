@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <div id="loadingScreen">
+        <h1>Loading...</h1>
+    </div>
     <div class="annoucements">
         <img src="/assets/dsftdcompsummer.png" alt="DSFT'd Summer Comp" class="banner" width="50px">
         <h2 class="announcement">SPRING 1V1 TOURNEY COMING SOON | SIGN UP NOW <a
@@ -49,6 +52,7 @@
         const completedBtn = document.getElementById('completed');
         const upcomingText = document.getElementById('upcomingText');
         const completedText = document.getElementById('completedText');
+        const loadingScreen = document.getElementById('loadingScreen');
 
         // Auto-select "Upcoming" on page load
         window.addEventListener('DOMContentLoaded', () => {
@@ -56,6 +60,25 @@
             completedText.style.display = 'none';
             upcomingBtn.classList.add('selected');
             completedBtn.classList.remove('selected');
+        });
+
+        // Hide the loading screen once the page is fully loaded
+        window.addEventListener('load', () => {
+            loadingScreen.style.display = 'none';
+            document.body.style.opacity = '1'; // Ensure the body is visible after loading
+        });
+
+        // Add a fade-out effect before navigating to a new page
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500); // Wait for the fade-out effect to complete
+            });
         });
 
         upcomingBtn.addEventListener('click', () => {

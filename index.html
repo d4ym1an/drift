@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    <div id="loadingScreen">
+        <h1>Loading...</h1>
+    </div>
     <div class="annoucements">
         <img src="/assets/dsftdcompsummer.png" alt="DSFT'd Summer Comp" class="banner" width="50px"> 
         <h2 class="announcement">SPRING 1V1 TOURNEY COMING SOON | SIGN UP NOW <a href="https://discord.gg/J5ahAE7bTf">HERE</a>🌷</h2>
@@ -21,6 +24,28 @@
     <footer>
         <p>&copy; 2025 DSFT'd COMP. DSFT'd HAS NO AFFILIATION NOR IS ENDORSED BY KIRKA.IO</p>
     </footer>
+    <script>
+        const loadingScreen = document.getElementById('loadingScreen');
+
+        // Hide the loading screen once the page is fully loaded
+        window.addEventListener('load', () => {
+            loadingScreen.style.display = 'none';
+            document.body.style.opacity = '1'; // Ensure the body is visible after loading
+        });
+
+        // Add a fade-out effect before navigating to a new page
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500); // Wait for the fade-out effect to complete
+            });
+        });
+    </script>
 </body>
 
 </html>

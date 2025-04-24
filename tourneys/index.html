@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DSFT'd // TOURNAMENTS</title>
     <link rel="icon" type="image/png" href="/assets/dsftdcomp.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="spring.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <h1>Loading...</h1>
     </div> -->
     <div class="annoucements">
-        <img src="/assets/dsftdcompsummer.png" alt="DSFT'd Summer Comp" class="banner" width="50px">
+        <img src="/assets/dsftdcompspring.png" alt="DSFT'd Summer Comp" class="banner" width="50px">
         <h2 class="announcement">SPRING 1V1 TOURNEY COMING SOON | SIGN UP NOW <a
                 href="https://discord.gg/J5ahAE7bTf" target="_blank">HERE</a>🌷</h2>
     </div>
@@ -37,10 +37,16 @@
 
     <div id="upcomingText">
         <div class="event">
-            <h2 class="dateName">MAY 03 <span style="color: #55b825;">2025</span></h2>
+            <h2 class="dateName">MAY 03, <span style="color: #55b825;">2025</span></h2>
             <h2>DSFT'd 1v1 SPRING NORTH AMERICA</h2>
-            <h2><span style="color: #ff8be0;">SABE</span> + <span style="color:#009d14 ;">DAYMIAN</span></h2>
+            <h2>SABE + DAYMIAN</h2>
             <a href="https://challonge.com/dsftdspring25" target="_blank">VIEW BRACKET</a>
+        </div>
+        <div class="event">
+            <h2 class="dateName">TBD, <span style="color: #55b825;">2025</span></h2>
+            <h2 id="exclude">FABIN 1v1 KNIFE TOURNEY</h2>
+            <h2>FABIN</h2>
+            <a href="#" target="_blank">TBD</a>
         </div>
     </div>
 
@@ -99,6 +105,29 @@ a
             completedBtn.classList.add('selected');
             upcomingBtn.classList.remove('selected');
         });
+
+        // Define colors for specific names
+        const nameColors = {
+            "fabin": "#380000",
+            "sabe": "#ff8be0",
+            "daymian": "#009d14"
+        };
+
+        // Function to apply colors to names
+        function applyNameColors() {
+            document.querySelectorAll('h2, p, span').forEach(element => {
+                if (element.id === "exclude") return; // Skip elements with id "exclude"
+                Object.keys(nameColors).forEach(name => {
+                    const regex = new RegExp(`\\b${name}\\b`, 'gi');
+                    element.innerHTML = element.innerHTML.replace(regex, match => {
+                        return `<span style="color: ${nameColors[name]};">${match}</span>`;
+                    });
+                });
+            });
+        }
+
+        // Apply colors on page load
+        window.addEventListener('DOMContentLoaded', applyNameColors);
     </script>
 
     <footer>

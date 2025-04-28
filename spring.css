@@ -200,6 +200,9 @@ footer {
         font-size: 12px;
         padding: 10px;
     }
+    #customCursor {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {

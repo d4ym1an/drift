@@ -21,7 +21,7 @@ document.addEventListener('mouseenter', () => {
 });
 
 // Scale cursor on hover over interactive elements
-document.querySelectorAll('a, .btn').forEach(element => {
+document.querySelectorAll('a, .btn, button, img').forEach(element => {
     element.addEventListener('mouseenter', () => {
         customCursor.style.transform = 'scale(2)';
     });

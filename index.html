@@ -27,31 +27,13 @@
         <a class="btn" href="https://discord.gg/J5ahAE7bTf">DISCORD</a>
         <a class="btn" href="/tourneys/index.html">TOURNAMENTS</a>
     </div>
+    <button id="themeToggle" class="theme-toggle-btn"><img src="/assets/brush.svg"></button>
     <footer>
         <p>&copy; 2025 DSFT'd COMP. DSFT'd IS AN INDEPENDENT ENTITY AND IS NEITHER AFFILIATED WITH NOR ENDORSED BY KIRKA.IO.</p>
     </footer>
-    <script>
-        const loadingScreen = document.getElementById('loadingScreen');
 
-        // Hide the loading screen once the page is fully loaded
-        window.addEventListener('load', () => {
-            loadingScreen.style.display = 'none';
-            document.body.style.opacity = '1'; // Ensure the body is visible after loading
-        });
-
-        // Add a fade-out effect before navigating to a new page
-        document.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const href = link.getAttribute('href');
-                document.body.style.transition = 'opacity 0.5s ease';
-                document.body.style.opacity = '0';
-                setTimeout(() => {
-                    window.location.href = href;
-                }, 500); // Wait for the fade-out effect to complete
-            });
-        });
-    </script>
+    <script src="script.js"></script>
     <script src="cursor.js"></script>
+    <script src="switchTheme.js"></script>
 </body>
 </html>

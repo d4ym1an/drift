@@ -71,10 +71,10 @@ a:hover ~ #customCursor,
 }
  
  .annoucements{
-     background: linear-gradient(to right, #ffefba, #ffffff, #b8e994);
+     background: black;
      padding: 10px;
      font-size: large;
-     color: rgb(0, 0, 0);
+     color: rgb(255, 255, 255);
      transition: ease-in-out 400ms;
      text-align: center;
      display: flex;
@@ -84,14 +84,15 @@ a:hover ~ #customCursor,
  }
  
  .announcement a{
-     color: rgb(0, 0, 0);
+     color: rgb(255, 255, 255);
      text-decoration: none;
      transition: color 300ms ease;
      text-decoration: underline;
+     font-size: large;
  }
  
  .announcement a:hover{
-     color: rgb(255, 205, 242);
+     color: rgb(255, 255, 255);
      text-decoration: underline;
  }
  

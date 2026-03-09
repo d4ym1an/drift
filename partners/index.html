@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIFT // PARTNERS</title>
+    <link rel="icon" type="image/png" href="/assets/driftnobg.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- Discord Link Preview -->
+    <meta property="og:title" content="DRIFT PARTNERS">
+    <meta property="og:description" content="you make">
+    <meta property="og:url" content="https://drift.daymian.xyz/">
+    <meta property="og:image" content="https://drift.daymian.xyz/assets/drift.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="DRIFT PARTNERS">
+    <meta name="theme-color" content="#00440e">
+</head>
+
+<body>
+
+    <!-- <div class="annoucements">
+        <h2 class="announcement"> <a href="https://discord.gg/J5ahAE7bTf"
+                target="_blank">HERE</a></h2>
+    </div> -->
+    <div class="title">
+        <a href="/index.html" id="home">home</a>
+        <h1 class="Titletext">PARTNERS</h1>
+    </div>
+
+    <div id="completedText">
+        <div class="partner">
+            <img src="/assets/flow.png" alt="flow logo" class="partner-logo">
+            <h2 style="color: #ff5000;">flow</h2>
+            <a href="https://challonge.com/driftspring25" target="_blank">SERVER</a>
+        </div>
+        <div class="partner">
+            <img src="/assets/comp.png" alt="comp logo" class="partner-logo">
+            <h2>COMP KIRKA MAPS</h2>
+            <a href="https://pastebin.com/hTdqscMj" target="_blank">SERVER</a>  
+        </div>
+    </div>
+    <div id="customCursor"></div>
+    <script>
+        const upcomingBtn = document.getElementById('upcoming');
+        const completedBtn = document.getElementById('completed');
+        const upcomingText = document.getElementById('upcomingText');
+        const completedText = document.getElementById('completedText');
+        const loadingScreen = document.getElementById('loadingScreen');
+
+        // Auto-select "Upcoming" on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            upcomingText.style.display = 'block';
+            completedText.style.display = 'none';
+            upcomingBtn.classList.add('selected');
+            completedBtn.classList.remove('selected');
+        });
+
+        // Hide the loading screen once the page is fully loaded
+        window.addEventListener('load', () => {
+            loadingScreen.style.display = 'none';
+            document.body.style.opacity = '1'; // Ensure the body is visible after loading
+        });
+
+        // Add a fade-out effect before navigating to a new page
+        document.querySelectorAll('#home').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const href = link.getAttribute('href');
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500); // Wait for the fade-out effect to complete
+            });
+        });
+
+        // Show "Upcoming" section when clicking the "Upcoming" button
+        upcomingBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            upcomingText.style.display = 'block';
+            completedText.style.display = 'none';
+            upcomingBtn.classList.add('selected');
+            completedBtn.classList.remove('selected');
+        });
+
+        // Show "Completed" section when clicking the "Completed" button
+        completedBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            completedText.style.display = 'block';
+            upcomingText.style.display = 'none';
+            completedBtn.classList.add('selected');
+            upcomingBtn.classList.remove('selected');
+        });
+
+        // Define colors for specific names
+        const nameColors = {
+            "fabin": "#380000",
+            "sabe": "#ff8be0",
+            "daymian": "#009d14"
+        };
+
+        // Function to apply colors to names
+        function applyNameColors() {
+            document.querySelectorAll('h2, p, span').forEach(element => {
+                if (element.id === "exclude") return; // Skip elements with id "exclude"
+                Object.keys(nameColors).forEach(name => {
+                    const regex = new RegExp(`\\b${name}\\b`, 'gi');
+                    element.innerHTML = element.innerHTML.replace(regex, match => {
+                        return `<span style="color: ${nameColors[name]};">${match}</span>`;
+                    });
+                });
+            });
+        }
+
+        // Apply colors on page load
+        window.addEventListener('DOMContentLoaded', applyNameColors);
+    </script>
+    <footer>
+        <p>DRIFT COMP. DRIFT IS AN INDEPENDENT ENTITY AND IS NEITHER AFFILIATED WITH NOR ENDORSED BY
+            KIRKA.IO.</p>
+    </footer>
+    <script src="/cursor.js"></script>
+    <script src="/switchTheme.js"></script>
+</body>
+
+</html>
